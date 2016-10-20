@@ -1,0 +1,27 @@
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <h1 class="page-header">TodoList</h1>
+
+    <% if notice.present? %>
+        <div class="alert alert-info" role="alert">
+          <%= notice %>
+        </div>
+    <% end %>
+
+    <%= render "form", todo: @todo %>
+
+    <hr />
+
+    <table class="table table-striped">
+      <%= render @todos %>
+    </table>
+
+    <div class="footer">
+      Todo: <span id="todo-count">1</span> •
+      Done: <span id="completed-count">0</span> •
+      Total: <span id="total-count">1</span> •
+      <a href="#" id="clean-up">Clean up</a>
+    </div>
+  </div>
+
+</div>

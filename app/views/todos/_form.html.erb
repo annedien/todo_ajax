@@ -1,0 +1,10 @@
+<%= form_for(todo) do |f| %>
+    <div class="form-group <%= todo.errors.any? ? 'has_error' : '' %>">
+      <%= f.text_field :title, placeholder: "What needs to be done?", class: 'form-control' %>
+      <% if todo.errors.any? %>
+          <% todo.errors.full_messages.each do |message| %>
+              <span class="help-block"><%= message %></span>
+          <% end %>
+      <% end %>
+    </div>
+<% end %>
